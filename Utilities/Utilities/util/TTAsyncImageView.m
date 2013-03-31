@@ -21,7 +21,7 @@
 
 - (id)initWithFrame:(CGRect)frame
           URLString:(NSString*)URLString
-         completion:(void(^)(void))completion
+         completion:(void(^)(TTAsyncImageView *))completion
 {
     self = [super initWithFrame:frame];
     if(self)
@@ -33,7 +33,7 @@
             UIImage *image = [UIImage imageWithData:data];
             dispatch_async(dispatch_get_main_queue(), ^{
                 self.image = image;
-                completion();
+                completion(self);
                 [_indicator stopAnimating];
             });
         });

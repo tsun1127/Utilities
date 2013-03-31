@@ -15,6 +15,6 @@
 
 - (id)initWithFrame:(CGRect)frame
           URLString:(NSString*)URLString
-         completion:(void(^)(void))completion;
+         completion:(void(^)(TTAsyncImageView *))completion;
 
 @end

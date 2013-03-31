@@ -50,8 +50,8 @@ static const float kImageViewHeight = 160.0f;
                                                                               kImageViewWidth,
                                                                               kImageViewHeight)
                                                          URLString:URLString
-                                                        completion:^{
-                                                            NSLog(@"Finish!!");
+                                                        completion:^(TTAsyncImageView *loaded) {
+                                                            NSLog(@"Finish!!, %@", loaded);
                                                         }];
     
     iv.layer.borderWidth = 1.0f;
