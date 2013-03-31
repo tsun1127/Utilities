@@ -18,6 +18,8 @@
 		870F415A1707FC1700EBA895 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 870F41591707FC1700EBA895 /* Default-568h@2x.png */; };
 		870F415D1707FC1700EBA895 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 870F415C1707FC1700EBA895 /* ViewController.m */; };
 		870F41601707FC1700EBA895 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 870F415E1707FC1700EBA895 /* ViewController.xib */; };
+		870F41711707FEE300EBA895 /* TTAsyncLoadImageSampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 870F416F1707FEE300EBA895 /* TTAsyncLoadImageSampleViewController.m */; };
+		870F41751708071E00EBA895 /* TTAsyncImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 870F41741708071E00EBA895 /* TTAsyncImageView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +39,10 @@
 		870F415B1707FC1700EBA895 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		870F415C1707FC1700EBA895 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		870F415F1707FC1700EBA895 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
+		870F416E1707FEE300EBA895 /* TTAsyncLoadImageSampleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTAsyncLoadImageSampleViewController.h; path = Utilities/SampleCode/TTAsyncLoadImageSampleViewController.h; sourceTree = "<group>"; };
+		870F416F1707FEE300EBA895 /* TTAsyncLoadImageSampleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TTAsyncLoadImageSampleViewController.m; path = Utilities/SampleCode/TTAsyncLoadImageSampleViewController.m; sourceTree = "<group>"; };
+		870F41731708071E00EBA895 /* TTAsyncImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTAsyncImageView.h; path = util/TTAsyncImageView.h; sourceTree = "<group>"; };
+		870F41741708071E00EBA895 /* TTAsyncImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TTAsyncImageView.m; path = util/TTAsyncImageView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +62,7 @@
 		870F41371707FC1700EBA895 = {
 			isa = PBXGroup;
 			children = (
+				870F416A1707FE5600EBA895 /* SampleCode */,
 				870F41491707FC1700EBA895 /* Utilities */,
 				870F41421707FC1700EBA895 /* Frameworks */,
 				870F41411707FC1700EBA895 /* Products */,
@@ -83,6 +90,7 @@
 		870F41491707FC1700EBA895 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				870F41661707FC4D00EBA895 /* Util */,
 				870F41521707FC1700EBA895 /* AppDelegate.h */,
 				870F41531707FC1700EBA895 /* AppDelegate.m */,
 				870F415B1707FC1700EBA895 /* ViewController.h */,
@@ -105,6 +113,24 @@
 				870F41591707FC1700EBA895 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		870F41661707FC4D00EBA895 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				870F41731708071E00EBA895 /* TTAsyncImageView.h */,
+				870F41741708071E00EBA895 /* TTAsyncImageView.m */,
+			);
+			name = Util;
+			sourceTree = "<group>";
+		};
+		870F416A1707FE5600EBA895 /* SampleCode */ = {
+			isa = PBXGroup;
+			children = (
+				870F416E1707FEE300EBA895 /* TTAsyncLoadImageSampleViewController.h */,
+				870F416F1707FEE300EBA895 /* TTAsyncLoadImageSampleViewController.m */,
+			);
+			name = SampleCode;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -176,6 +202,8 @@
 				870F41501707FC1700EBA895 /* main.m in Sources */,
 				870F41541707FC1700EBA895 /* AppDelegate.m in Sources */,
 				870F415D1707FC1700EBA895 /* ViewController.m in Sources */,
+				870F41711707FEE300EBA895 /* TTAsyncLoadImageSampleViewController.m in Sources */,
+				870F41751708071E00EBA895 /* TTAsyncImageView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
