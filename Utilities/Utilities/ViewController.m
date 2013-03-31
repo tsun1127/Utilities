@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "TTAsyncLoadImageSampleViewController.h"
 
 @interface ViewController ()
 
@@ -24,6 +25,13 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)asynchLoadImage:(id)sender
+{
+    TTAsyncLoadImageSampleViewController * vc = [[TTAsyncLoadImageSampleViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:true];
+    [vc release];
 }
 
 @end

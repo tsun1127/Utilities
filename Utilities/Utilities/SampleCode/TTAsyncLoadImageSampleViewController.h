@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  TTAsyncLoadImageSampleViewController.h
 //  Utilities
 //
 //  Created by Toshiyuki Tezuka on 2013/03/31.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
-- (IBAction)asynchLoadImage:(id)sender;
+@interface TTAsyncLoadImageSampleViewController : UIViewController
 
 @end
