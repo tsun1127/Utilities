@@ -9,6 +9,8 @@
 #import "AppDelegate.h"
 
 #import "ViewController.h"
+#import "TTFlatNavigationBar.h"
+#import "TTCommon.h"
 
 @implementation AppDelegate
 
@@ -25,11 +27,21 @@
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     // Override point for customization after application launch.
     
+//    UIViewController *vc = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
+//    self.navigationController = [[[TTFlatNavigationController alloc] initWithNavigationBarClass:[TTFlatNavigationBar class]
+//                                                                                   toolbarClass:[UIToolbar class]] autorelease];
+//    self.navigationController.viewControllers = [NSArray arrayWithObject:vc];
+    
     UIViewController *vc = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
-    self.navigationController = [[[UINavigationController alloc] initWithRootViewController:vc] autorelease];
+//    self.navigationController = [[TTFlatNavigationController alloc] initWithRootViewController:vc];
+    self.navigationController = [[CHFlatNavigationController alloc] initWithRootViewController:vc];
+    self.navigationController.flatNavigationBarColor = UIColorWithRGB(100, 100, 100);
     [vc release];
+    
     self.window.rootViewController = self.navigationController;
     [self.window makeKeyAndVisible];
+    
+//    self.navigationController.navigationBarColor = UIColorWithRGB(100, 100, 100);
     
     return YES;
 }

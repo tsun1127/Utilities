@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+//#import "TTFlatNavigationController.h"
+#import "CHFlatNavigationController.h"
 
 @class ViewController;
 
@@ -15,6 +17,9 @@
 @property (strong, nonatomic) UIWindow *window;
 
 //@property (strong, nonatomic) ViewController *viewController;
-@property (strong,nonatomic) UINavigationController *navigationController;
+//@property (strong,nonatomic) UINavigationController *navigationController;
+
+//@property (strong,nonatomic) TTFlatNavigationController *navigationController;
+@property (strong, nonatomic) CHFlatNavigationController *navigationController;
 
 @end

@@ -7,7 +7,10 @@
 //
 
 #import "ViewController.h"
+
+#import "TTCommon.h"
 #import "TTAsyncLoadImageSampleViewController.h"
+#import "TTFlatButton.h"
 
 @interface ViewController ()
 
@@ -19,6 +22,12 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    TTFlatButton *button = [[TTFlatButton alloc] initWithColor:UIColorWithRGB(26, 139, 188)];
+    button.frame = CGRectMake(0, 0, 180, 44);
+    button.text = @"Button";
+    button.center = self.view.center;
+    [self.view addSubview:button];
 }
 
 - (void)didReceiveMemoryWarning
@@ -30,6 +39,7 @@
 - (IBAction)asynchLoadImage:(id)sender
 {
     TTAsyncLoadImageSampleViewController * vc = [[TTAsyncLoadImageSampleViewController alloc] init];
+    vc.title = @"title";
     [self.navigationController pushViewController:vc animated:true];
     [vc release];
 }
