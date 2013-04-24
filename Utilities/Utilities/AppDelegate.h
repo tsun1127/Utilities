@@ -10,6 +10,8 @@
 //#import "TTFlatNavigationController.h"
 #import "CHFlatNavigationController.h"
 
+#import "UIImage+Icon.h"
+
 @class ViewController;
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>

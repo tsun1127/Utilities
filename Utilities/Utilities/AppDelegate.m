@@ -38,6 +38,11 @@
     self.navigationController.flatNavigationBarColor = UIColorWithRGB(100, 100, 100);
     [vc release];
     
+    UIImage *img = [UIImage imageWithFontIconType:@"u" color:[UIColor blueColor] height:80.0f];
+    UIImageView *iv = [[UIImageView alloc] initWithImage:img];
+    iv.backgroundColor = [UIColor magentaColor];
+    [vc.view addSubview:iv];
+    
     self.window.rootViewController = self.navigationController;
     [self.window makeKeyAndVisible];
     

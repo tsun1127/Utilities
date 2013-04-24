@@ -10,6 +10,7 @@
 #import "TTAsyncImageView.h"
 
 #import <QuartzCore/QuartzCore.h>
+#import "UIImage+Icon.h"
 
 @interface TTAsyncLoadImageSampleViewController ()
 
@@ -33,10 +34,20 @@
     self.view.backgroundColor = [UIColor whiteColor];
     
     NSString *url = @"http://img.youtube.com/vi/bNNzRyd1xz0/0.jpg";
-    for(int i=0; i<6; i++)
+    for(int i=0; i<1; i++)
     {
         [self loadImage:url index:i];
     }
+    
+    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithImage:nil
+                                                                    style:UIBarButtonItemStylePlain
+                                                                   target:nil
+                                                                   action:nil];
+    [rightButton setBackgroundImage:[UIImage imageWithColor:[UIColor clearColor] rect:CGRectMake(0, 0, 20, 20)]
+                           forState:UIControlStateNormal
+                         barMetrics:UIBarMetricsDefault];
+    [rightButton setImage:[UIImage imageWithFontIconType:FontIconTypeList color:[UIColor whiteColor] height:30.0f]];
+    self.navigationItem.rightBarButtonItem = rightButton;
 }
 
 static const float kImageViewWidth = 160.0f;
@@ -52,6 +63,13 @@ static const float kImageViewHeight = 160.0f;
                                                          URLString:URLString
                                                         completion:^(TTAsyncImageView *loaded) {
                                                             NSLog(@"Finish!!, %@", loaded);
+                                                            loaded.center = CGPointMake(160,240);
+                                                            //adding shadow
+                                                            loaded.layer.shadowRadius = 3;
+                                                            loaded.layer.shadowColor = [[UIColor blackColor] CGColor];
+                                                            loaded.layer.shadowOpacity = 0.7f;
+                                                            loaded.layer.shadowOffset = CGSizeMake(-2, 2);
+//                                                            loaded.layer.shadowPath = [UIBezierPath bezierPathWithRect:loaded.bounds];
                                                         }];
     
     iv.layer.borderWidth = 1.0f;
