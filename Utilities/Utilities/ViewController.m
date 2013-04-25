@@ -39,7 +39,7 @@
 - (IBAction)asynchLoadImage:(id)sender
 {
     TTAsyncLoadImageSampleViewController * vc = [[TTAsyncLoadImageSampleViewController alloc] init];
-    vc.title = @"title";
+//    vc.title = @"title";
     [self.navigationController pushViewController:vc animated:true];
     [vc release];
 }

@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+#import "UIImage+Icon.h"
 #import "CHFlatBarButtonItem.h"
 
-@interface CHFlatNavigationController : UINavigationController
+@interface CHFlatNavigationController : UINavigationController <UINavigationControllerDelegate>
 
 @property (nonatomic,retain) UIColor *flatNavigationBarColor;
+@property (nonatomic,retain) NSString *backButtonFontName;
 
 @end

@@ -39,6 +39,9 @@
         [self loadImage:url index:i];
     }
     
+    NSMutableArray *arr = [NSMutableArray arrayWithCapacity:0];
+    
+    /** Icon1 */
     UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithImage:nil
                                                                     style:UIBarButtonItemStylePlain
                                                                    target:nil
@@ -46,8 +49,40 @@
     [rightButton setBackgroundImage:[UIImage imageWithColor:[UIColor clearColor] rect:CGRectMake(0, 0, 20, 20)]
                            forState:UIControlStateNormal
                          barMetrics:UIBarMetricsDefault];
-    [rightButton setImage:[UIImage imageWithFontIconType:FontIconTypeList color:[UIColor whiteColor] height:30.0f]];
-    self.navigationItem.rightBarButtonItem = rightButton;
+    [rightButton setImage:[UIImage imageWithFontIconType:Glyphs_FontIconTypeCreateNew color:[UIColor whiteColor] height:18.0f]];
+    [arr addObject:rightButton];
+    [rightButton release];
+    
+    /** Icon2 */
+    rightButton = [[UIBarButtonItem alloc] initWithImage:nil
+                                                   style:UIBarButtonItemStylePlain
+                                                  target:nil
+                                                  action:nil];
+    [rightButton setBackgroundImage:[UIImage imageWithColor:[UIColor clearColor] rect:CGRectMake(0, 0, 20, 20)]
+                           forState:UIControlStateNormal
+                         barMetrics:UIBarMetricsDefault];
+    [rightButton setImage:[UIImage imageWithFontIconType:Glyphs_FontIconTypeDustbox color:[UIColor whiteColor] height:18.0f]];
+    [arr addObject:rightButton];
+    [rightButton release];
+    
+    /** Icon3 */
+    rightButton = [[UIBarButtonItem alloc] initWithImage:nil
+                                                   style:UIBarButtonItemStylePlain
+                                                  target:nil
+                                                  action:nil];
+    [rightButton setBackgroundImage:[UIImage imageWithColor:[UIColor clearColor] rect:CGRectMake(0, 0, 20, 20)]
+                           forState:UIControlStateNormal
+                         barMetrics:UIBarMetricsDefault];
+    [rightButton setImage:[UIImage imageWithFontIconType:Glyphs_FontIconTypeMenu color:[UIColor whiteColor] height:18.0f]];
+    [arr addObject:rightButton];
+    [rightButton release];
+    
+    self.navigationItem.rightBarButtonItems = [NSArray arrayWithArray:arr];
+}
+
+- (void)back
+{
+    [self.navigationController popViewControllerAnimated:true];
 }
 
 static const float kImageViewWidth = 160.0f;

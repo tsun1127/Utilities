@@ -8,8 +8,6 @@
 
 #import "CHFlatNavigationController.h"
 
-#import "UIImage+Icon.h"
-
 @interface CHFlatNavigationController ()
 
 @end
@@ -17,20 +15,19 @@
 @implementation CHFlatNavigationController
 
 @synthesize flatNavigationBarColor = _flatNavigationBarColor;
+@synthesize backButtonFontName = _backButtonFontName;
+
+#define DEFAULT_BACK_BAR_BUTTON_FONT_NAME Glyphs_FontIconTypeArrowLeftSmall
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        self.delegate = self;
+        self.backButtonFontName = DEFAULT_BACK_BAR_BUTTON_FONT_NAME;
     }
     return self;
-}
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-	// Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning
@@ -55,22 +52,52 @@
 
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated
 {
-    NSArray *array = self.viewControllers;
-    if([array count] > 0)
-    {
-        UIViewController *vc = [array objectAtIndex:[array count]-1];
-        UIBarButtonItem *backBarButtonItem = [[UIBarButtonItem alloc] initWithImage:nil
-                                                                              style:UIBarButtonItemStylePlain
-                                                                             target:nil
-                                                                             action:nil];
-        [backBarButtonItem setBackButtonBackgroundImage:[UIImage imageWithColor:[UIColor clearColor] rect:CGRectMake(0, 0, 20, 40)]
-                                               forState:UIControlStateNormal
-                                             barMetrics:UIBarMetricsDefault];
-        [backBarButtonItem setImage:[UIImage imageWithFontIconType:FontIconTypeLeftArrow color:[UIColor whiteColor] height:60.0f]];
-        vc.navigationItem.backBarButtonItem = backBarButtonItem;
-    }
+//    NSArray *array = self.viewControllers;
+//    if([array count] > 0)
+//    {
+//        UIViewController *vc = [array objectAtIndex:[array count]-1];
+//        UIBarButtonItem *backBarButtonItem = [[UIBarButtonItem alloc] initWithImage:nil
+//                                                                              style:UIBarButtonItemStylePlain
+//                                                                             target:nil
+//                                                                             action:nil];
+//        [backBarButtonItem setBackButtonBackgroundImage:[UIImage imageWithColor:[UIColor clearColor] rect:CGRectMake(0, 0, 20, 40)]
+//                                               forState:UIControlStateNormal
+//                                             barMetrics:UIBarMetricsDefault];
+//        [backBarButtonItem setImage:[UIImage imageWithFontIconType:Glyphs_FontIconTypeArrowLeftSmall color:[UIColor whiteColor] height:20.0f]];
+//        vc.navigationItem.backBarButtonItem = backBarButtonItem;
+//    }
     
     [super pushViewController:viewController animated:animated];
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+}
+
+- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated
+{
+    /** Designed BackBar Button */
+    NSArray *array = self.viewControllers;
+    UIBarButtonItem *leftButton = [[[UIBarButtonItem alloc] initWithTitle:nil
+                                                                   style:UIBarButtonItemStylePlain
+                                                                  target:self
+                                                                  action:@selector(back)] autorelease];
+    [leftButton setBackgroundImage:[UIImage imageWithColor:[UIColor clearColor] rect:CGRectMake(0, 0, 20, 20)]
+                          forState:UIControlStateNormal
+                        barMetrics:UIBarMetricsDefault];
+    [leftButton setImage:[UIImage imageWithFontIconType:_backButtonFontName color:[UIColor whiteColor] height:20.0f]];
+    
+    if([array count] > 1)
+    {
+        UIViewController *vc = [array objectAtIndex:[array count]-1];
+        vc.navigationItem.leftBarButtonItem = leftButton;
+    }
+}
+
+- (void)back
+{
+    [self popViewControllerAnimated:true];
 }
 
 @end

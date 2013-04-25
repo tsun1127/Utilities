@@ -22,7 +22,21 @@
 //#define FontIconType    @"\u"
 //#define FontIconType    @"\u"
 //#define FontIconType    @"\u"
-//#define FontIconType    @"\u"
+
+/** "Glyphs" */
+#define Glyphs_FontIconTypeGitHub           @"\uF081"
+#define Glyphs_FontIconTypeArrowLeft        @"\uF305"
+#define Glyphs_FontIconTypeArrowLeftSmall   @"\uF489"
+#define Glyphs_FontIconTypeArrowLeftiOS     @"\uF505"
+#define Glyphs_FontIconTypeArrowLeftCircle  @"\uF3C6"
+
+#define Glyphs_FontIconTypeMenu             @"\uF127"
+#define Glyphs_FontIconTypeDustbox          @"\uF0CE"
+#define Glyphs_FontIconTypeCreateNew        @"\uF47C"
+//#define Glyphs_FontIconType @"\u"
+//#define Glyphs_FontIconType @"\u"
+//#define Glyphs_FontIconType @"\u"
+//#define Glyphs_FontIconType @"\u"
 
 @interface UIImage (Icon)
 

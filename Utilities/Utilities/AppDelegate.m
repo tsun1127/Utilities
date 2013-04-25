@@ -35,13 +35,14 @@
     UIViewController *vc = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
 //    self.navigationController = [[TTFlatNavigationController alloc] initWithRootViewController:vc];
     self.navigationController = [[CHFlatNavigationController alloc] initWithRootViewController:vc];
-    self.navigationController.flatNavigationBarColor = UIColorWithRGB(100, 100, 100);
+    _navigationController.flatNavigationBarColor = UIColorWithRGB(100, 100, 100);
+    _navigationController.backButtonFontName = Glyphs_FontIconTypeArrowLeft;
     [vc release];
     
-    UIImage *img = [UIImage imageWithFontIconType:@"u" color:[UIColor blueColor] height:80.0f];
-    UIImageView *iv = [[UIImageView alloc] initWithImage:img];
-    iv.backgroundColor = [UIColor magentaColor];
-    [vc.view addSubview:iv];
+//    UIImage *img = [UIImage imageWithFontIconType:@"u" color:[UIColor blueColor] height:80.0f];
+//    UIImageView *iv = [[UIImageView alloc] initWithImage:img];
+//    iv.backgroundColor = [UIColor magentaColor];
+//    [vc.view addSubview:iv];
     
     self.window.rootViewController = self.navigationController;
     [self.window makeKeyAndVisible];

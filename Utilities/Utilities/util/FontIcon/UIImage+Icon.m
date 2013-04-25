@@ -10,6 +10,9 @@
 
 @implementation UIImage (Icon)
 
+#define FONT_ENTYPO     @"Entypo"
+#define FONT_GLYPHS     @"webhostinghub-glyphs"
+
 + (UIImage *)imageWithFontIconType:(NSString*)type color:(UIColor*)color height:(float)height //size:(CGSize)size
 {
     const char *fiName = [type UTF8String]; //"\u1F4DE";
@@ -23,7 +26,7 @@
 + (UIImage *)imageFromText:(NSString *)text color:(UIColor*)color fontSize:(float)fontSize
 {
     // set the font type and size
-    UIFont *font = [UIFont fontWithName:@"Entypo" size:fontSize];
+    UIFont *font = [UIFont fontWithName:FONT_GLYPHS size:fontSize];
     CGSize size  = [text sizeWithFont:font];
     float pointX = 0.0f;
     
